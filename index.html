@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoBeton</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="#">
+    <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><rect x="2" y="2" width="24" height="24" rx="7" fill="#3f7d4e"/><path d="M8 19c0-6 4-9 12-9 0 7-4 10-10 10" fill="none" stroke="#f3efe4" stroke-width="2" stroke-linecap="round"/></svg>
+    <span>ЭкоБетон</span>
+  </a>
+  <div class="lang" role="group" aria-label="Language">
+    <button data-lang="ru" class="active">RU</button>
+    <button data-lang="kk">ҚАЗ</button>
+    <button data-lang="en">EN</button>
+  </div>
+</header>
+
+<section class="hero">
+  <p class="demo-notice" id="demo-notice">ДЕМО · Синтетические данные, не для строительства</p>
+  <h1 data-i18n="hero_title"></h1>
+  <p data-i18n="hero_text"></p>
+  <ol class="steps">
+    <li data-i18n="step1"></li>
+    <li data-i18n="step2"></li>
+    <li data-i18n="step3"></li>
+  </ol>
+</section>
+
+<main class="layout">
+
+  <section class="map-section">
+    <div class="map-head">
+      <h2 data-i18n="map_title"></h2>
+      <button id="locate-btn" class="btn" data-i18n="locate"></button>
+    </div>
+    <div id="map"></div>
+    <div id="map-status" class="status-line"></div>
+    <label class="field">
+      <span data-i18n="sulfate_input"></span>
+      <input id="sulfate-input" type="number" min="0" max="100000" step="10" inputmode="numeric">
+    </label>
+  </section>
+
+  <section class="results-section">
+
+    <div id="loading" class="card loading hidden">
+      <div class="spinner"></div>
+      <span data-i18n="loading"></span>
+    </div>
+
+    <div id="error-box" class="card error-box hidden"></div>
+
+    <div id="results" class="hidden">
+
+      <ul id="warnings" class="warnings hidden"></ul>
+
+      <div class="card">
+        <h2 data-i18n="soil_title"></h2>
+        <div class="grid" id="soil-grid"></div>
+        <p class="meta" data-i18n="soil_meta"></p>
+      </div>
+
+      <div class="card">
+        <h2 data-i18n="climate_title"></h2>
+        <div class="grid" id="climate-grid"></div>
+      </div>
+
+      <div class="card">
+        <h2 data-i18n="mix_title"></h2>
+
+        <div class="strata" id="strata" aria-hidden="true"></div>
+        <ul class="legend" id="legend"></ul>
+
+        <div class="grid" id="mix-grid"></div>
+        <div id="additives-block" class="additives-block"></div>
+
+        <div class="strength-box">
+          <div>
+            <span class="label" data-i18n="class_label"></span>
+            <span class="value" id="strength-class">—</span>
+          </div>
+          <div>
+            <span class="label" data-i18n="strength_label"></span>
+            <span class="value" id="strength-value">—</span>
+          </div>
+          <div>
+            <span class="label" data-i18n="durability"></span>
+            <span class="value" id="durability-value">—</span>
+          </div>
+          <div>
+            <span class="label" data-i18n="co2_label"></span>
+            <span class="value" id="co2-value">—</span>
+          </div>
+        </div>
+
+        <ul id="notes-list" class="notes-list"></ul>
+      </div>
+
+    </div>
+
+    <div id="placeholder" class="card placeholder" data-i18n="placeholder"></div>
+
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p data-i18n="sources"></p>
+  <p data-i18n="footer"></p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

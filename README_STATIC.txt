@@ -1,0 +1,1 @@
+EcoBeton static demo. Open index.html locally or host index.html, script.js and style.css together on GitHub Pages. No Flask, Python, Render or soil/weather API. OpenStreetMap tiles and Leaflet CDN require internet. All generated values are synthetic and not engineering advice.
